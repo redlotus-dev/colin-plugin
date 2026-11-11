@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "colin": {
+      "type": "http",
+      "url": "https://app.colinwork.com/mcp"
+    }
+  }
+}

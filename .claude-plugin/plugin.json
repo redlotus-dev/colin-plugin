@@ -1,0 +1,9 @@
+{
+  "name": "colin",
+  "version": "1.0.0",
+  "description": "Work in Colin from Claude: your day, your Sales pipeline, Workspace cards, records and chat, acting as you with your own permissions.",
+  "author": { "name": "Red Lotus Tecnologia", "url": "https://colinwork.com" },
+  "homepage": "https://colinwork.com",
+  "license": "MIT",
+  "keywords": ["crm", "sales", "pipeline", "kanban", "workspace", "brazil"]
+}

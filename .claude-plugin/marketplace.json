@@ -1,0 +1,12 @@
+{
+  "name": "colin",
+  "owner": { "name": "Red Lotus Tecnologia", "url": "https://colinwork.com" },
+  "metadata": { "description": "Colin by Red Lotus: the Colin connector and skills for Claude." },
+  "plugins": [
+    {
+      "name": "colin",
+      "source": "./",
+      "description": "Work in Colin from Claude: your day, your Sales pipeline, Workspace cards, records and chat, acting as you with your own permissions."
+    }
+  ]
+}
