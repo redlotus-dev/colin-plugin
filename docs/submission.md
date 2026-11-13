@@ -20,17 +20,20 @@
 2. `scripts/deploy/azure/colin-secrets.sh` → OPENAI_APPS_CHALLENGE, piped on stdin (never argv or a file), on the prod vault.
 3. Restart the backend revision; check `curl https://app.colinwork.com/.well-known/openai-apps-challenge` returns the token.
 
-## Test cases (demo account: a seeded tenant, no MFA, Sales + Workspace granted, read and write)
+## Test cases
+Demo account: the reviewer user of the demo instance on app.colinwork.com (role user, no MFA, Sales + Workspace granted, connector on read and write). Its data: the account Ateliê Bruma, the contacts Renata Alves and Bruno Teixeira, the open deal "Coleção Verão — Ateliê Bruma". Before the run, give the reviewer one card with a past deadline and one activity due today.
+
 Positive:
 1. "What do I have today in Colin?" → my_day; lists today's and overdue activities.
-2. "How is my pipeline? Which deals are past their close date?" → pipeline, forecast, list_deals.
-3. "I just called Ana at Fecchio, she wants the proposal Friday. Log it." → search, log_activity (call) + follow-up task; asks before saving.
-4. "Move the Fecchio deal to Proposal." → move_deal_stage after confirmation.
-5. "Which of my cards are overdue? Close the brochure card." → my_cards, complete_card.
+2. "How is my pipeline? Which deals are past their close date?" → pipeline, forecast, list_deals; names the Coleção Verão deal.
+3. "I just called Renata at Ateliê Bruma, she wants the proposal Friday. Log it." → search, log_activity (call) + follow-up task; asks before saving.
+4. "Move the Coleção Verão deal to the next stage." → move_deal_stage after confirmation.
+5. "Which of my cards are overdue? Close the first one." → my_cards, complete_card after confirmation.
+
 Negative:
-1. "Delete the Fecchio account." → no delete tool; the assistant says Colin only archives, on the web.
-2. A user without the Sales grant asks for deals → Colin refuses (app not granted); nothing is shown.
-3. Read-only connector, "log a call" → the write scope is not granted; the assistant says so and saves nothing.
+1. "Delete the Ateliê Bruma account." → no delete tool; the assistant says Colin only archives, on the web.
+2. A user without the Sales grant asks for deals → Colin refuses (app not granted); nothing is shown. (Remove the reviewer's Sales grant for this case, then give it back.)
+3. Read-only connector, "log a call" → the write scope is not granted; the assistant says so and saves nothing. (Set the connector to read only, sign in again, then set it back.)
 
 ## Still the owner's
 - Org verification on platform.openai.com; submit in both portals.
