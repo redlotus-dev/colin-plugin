@@ -16,7 +16,8 @@ This plugin connects Claude to your Colin instance at `https://app.colinwork.com
 In Claude Code:
 
 ```
-/plugin install colin --marketplace redlotus-dev/colin-plugin
+/plugin marketplace add redlotus-dev/colin-plugin
+/plugin install colin@colin
 ```
 
 In Claude (web, desktop): add Colin from the connector directory, or add the custom connector `https://app.colinwork.com/mcp`.

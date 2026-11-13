@@ -34,6 +34,11 @@ Negative:
 
 ## Still the owner's
 - Org verification on platform.openai.com; submit in both portals.
-- Domain token into Key Vault (above), then release this branch to prod.
+- Domain token into Key Vault (above); the route is live in prod.
 - Demo account credentials for the reviewers; screenshots (consent page, an answer with an agenda, a confirmation before a write) and a short demo video.
-- Public repo for the plugin (e.g. redlotus-dev/colin-plugin) with a marketplace.json; then add `/plugin install colin --marketplace <owner>/<repo>` to the README.
+- Run the test cases above from a clean install of the plugin, against prod, before submitting.
+
+## Plugin
+- Repo: https://github.com/redlotus-dev/colin-plugin (public; plugin `colin`, marketplace `colin`)
+- Install: `/plugin marketplace add redlotus-dev/colin-plugin`, then `/plugin install colin@colin`
+- Check before submitting: `claude plugin validate .`
